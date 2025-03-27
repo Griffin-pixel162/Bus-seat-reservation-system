@@ -1,9 +1,5 @@
 {
   "tickets": [
-    
-  
-
-    
     {
       "id": "dada",
       "ticketId": "T9673",
@@ -21,6 +17,15 @@
       "date": "2025-02-27",
       "from": "Nairobi",
       "to": "Kisumu"
+    },
+    {
+      "id": "69a4",
+      "ticketId": "T9504",
+      "name": "Alfa Ochoki",
+      "seat": "11",
+      "date": "2025-03-27",
+      "from": "Nairobi",
+      "to": "Oyugis"
     }
   ]
 }
