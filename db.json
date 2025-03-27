@@ -1,16 +1,26 @@
 {
-    "tickets": [
-        {
-            "id": 1,
-            "title": "Ticket 1",
-            "description": "Description 1",
-            "status": "open"
-        },
-        {
-            "id": 2,
-            "title": "Ticket 2",
-            "description": "Description 2",
-            "status": "closed"
-        }
-    ]
+  "tickets": [
+    
+  
+
+    
+    {
+      "id": "dada",
+      "ticketId": "T9673",
+      "name": "James Kioge",
+      "seat": "19",
+      "date": "2025-03-27",
+      "from": "Nairobi",
+      "to": "Ahero"
+    },
+    {
+      "id": "7582",
+      "ticketId": "T5582",
+      "name": "Griffin Bosire",
+      "seat": "19",
+      "date": "2025-02-27",
+      "from": "Nairobi",
+      "to": "Kisumu"
+    }
+  ]
 }
