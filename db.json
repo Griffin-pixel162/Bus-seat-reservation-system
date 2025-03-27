@@ -26,6 +26,15 @@
       "date": "2025-03-27",
       "from": "Nairobi",
       "to": "Oyugis"
+    },
+    {
+      "id": "7f76",
+      "ticketId": "T3673",
+      "name": "Mitchelle Kerubo",
+      "seat": "20",
+      "date": "2025-03-27",
+      "from": "Nairobi",
+      "to": "Nyadorera"
     }
   ]
 }
