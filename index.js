@@ -1,9 +1,9 @@
-// Initialize page
+
 document.addEventListener("DOMContentLoaded", () => {
-  fetchTickets(); // Load initial tickets
+  fetchTickets(); 
 });
 
-// Form submission handler
+
 document.getElementById("ticket-form").addEventListener("submit", async function(event) {
   event.preventDefault();
 
@@ -14,7 +14,7 @@ document.getElementById("ticket-form").addEventListener("submit", async function
       const from = document.getElementById("from").value.trim();
       const to = document.getElementById("to").value.trim();
 
-      // Validation
+      
       if (!name || !seat || !date || !from || !to) {
           throw new Error("All fields are required");
       }
@@ -24,9 +24,9 @@ document.getElementById("ticket-form").addEventListener("submit", async function
 
       const ticketId = "T" + Math.floor(Math.random() * 10000).toString().padStart(4, "0");
       const ticket = { ticketId, name, seat, date, from, to };
-
-      // POST to json-server
-      const response = await fetch("http://localhost:3000/tickets", {
+    //   https://br-liard-omega.vercel.app/tickets
+      
+      const response = await fetch("https://br-liard-omega.vercel.app/tickets", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
@@ -40,19 +40,19 @@ document.getElementById("ticket-form").addEventListener("submit", async function
 
       event.target.reset();
       alert(`Ticket ${ticketId} booked successfully`);
-      fetchTickets(); // Refresh ticket list
+      fetchTickets(); 
 
   } catch (error) {
       alert(error.message || "Failed to book ticket");
   }
 });
 
-// Delete handler
+
 document.getElementById("history-table-body").addEventListener("click", async function(event) {
   if (event.target.classList.contains("delete-btn")) {
       const ticketId = event.target.getAttribute("data-ticket-id");
       try {
-          const response = await fetch(`http://localhost:3000/tickets/${ticketId}`, {
+          const response = await fetch(`https://br-liard-omega.vercel.app/tickets/${ticketId}`, {
               method: "DELETE"
           });
 
@@ -61,23 +61,23 @@ document.getElementById("history-table-body").addEventListener("click", async fu
           }
 
           alert(`Ticket ${ticketId} deleted`);
-          fetchTickets(); // Refresh ticket list
+          fetchTickets();
       } catch (error) {
           alert("Failed to delete ticket");
       }
   }
 });
 
-// Filter handler
+
 document.getElementById("filter-input").addEventListener("input", function(event) {
   const searchTerm = event.target.value.toLowerCase();
-  fetchTickets(searchTerm); // Fetch with filter
+  fetchTickets(searchTerm);
 });
 
-// Fetch and render tickets
+
 async function fetchTickets(filter = "") {
   try {
-      const response = await fetch(`http://localhost:3000/tickets${filter ? `?name_like=${filter}` : ""}`);
+      const response = await fetch(`https://br-liard-omega.vercel.app/tickets${filter ? `?name_like=${filter}` : ""}`);
       if (!response.ok) {
           throw new Error("Failed to fetch tickets");
       }
@@ -89,7 +89,7 @@ async function fetchTickets(filter = "") {
   }
 }
 
-// Render tickets to table
+
 function renderTickets(ticketArray) {
   const tableBody = document.getElementById("history-table-body");
   tableBody.innerHTML = "";
@@ -107,7 +107,7 @@ function renderTickets(ticketArray) {
   });
 }
 
-// HTML escape function
+
 function escapeHtml(unsafe) {
   return unsafe
       .replace(/&/g, "&")
