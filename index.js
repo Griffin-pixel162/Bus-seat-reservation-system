@@ -4,8 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-document.getElementById("ticket-form");
-addEventListener("submit", async function(event) {
+document.getElementById("ticket-form").addEventListener("submit", async function(event) {
   event.preventDefault();
 
   try {
