@@ -1,0 +1,125 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,500,300italic,500italic,700italic,900,300);
+html{
+    background-image: image("img/Ena Coach, Bus Company in Kenya - Karambu.jpeg");
+
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    /* background-color: #0a0a0a; */
+    padding: 20px;
+    justify-content:center;
+    align-items: center;
+    
+    
+    /* background-image: url("img/Ena Coach, Bus Company in Kenya - Karambu.jpeg"); */
+    
+}
+#image{
+    justify-items: center;
+    align-items: center;
+    margin-top: 10px;
+    max-width: 100%;
+    height: auto;
+}
+#navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#navbar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+#navbar li{
+    list-style-type: none;
+    display: flex;
+    justify-items: center;
+    text-align: center;
+    margin: 0 10px;
+}
+.main {
+    max-width: 600px;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+input[type="text"], input[type="date"], input[type="submit"] {
+    width: calc(100%);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#ticket-history {
+    margin-top: 20px;
+    display: none;
+}
+
+#history-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#history-table th, #history-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+#history-table th {
+    background-color: #f2f2f2;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.seat {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.available {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.occupied {
+    background-color: #dc3545;
+    color: white;
+}
