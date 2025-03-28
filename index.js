@@ -37,9 +37,9 @@ document.getElementById("ticket-form").addEventListener("submit", async function
         alert(`Ticket ${ticketId} booked successfully`);
         fetchTickets(); 
 
-      if (!response.ok) {
-          throw new Error("Error");
-      }
+    //   if (!response.ok) {
+    //       throw new Error("Error");
+    //   }
       
 
 
