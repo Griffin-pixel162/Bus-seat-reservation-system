@@ -21,7 +21,7 @@ document.getElementById("ticket-form").addEventListener("submit", async function
       if (from.toLowerCase() === to.toLowerCase()) {
           throw new Error("Departure and destination cannot be the same");
       }
-
+      fetchTickets();
       const ticketId = "T" + Math.floor(Math.random() * 10000).toString().padStart(4, "0");
       const ticket = { ticketId, name, seat, date, from, to };
     //   https://br-liard-omega.vercel.app/tickets
@@ -32,18 +32,19 @@ document.getElementById("ticket-form").addEventListener("submit", async function
               "Content-Type": "application/json"
           },
           body: JSON.stringify(ticket)
-      });
+        });
+        event.target.reset();
+        alert(`Ticket ${ticketId} booked successfully`);
+        fetchTickets(); 
 
       if (!response.ok) {
-          throw new Error("Failed to book ticket");
+          throw new Error("Error");
       }
+      
 
-      event.target.reset();
-      alert(`Ticket ${ticketId} booked successfully`);
-      fetchTickets(); 
 
   } catch (error) {
-      alert(error.message || "Failed to book ticket");
+      alert( "Failed to book ticket");
   }
 });
 
@@ -57,7 +58,7 @@ document.getElementById("history-table-body").addEventListener("click", async fu
           });
 
           if (!response.ok) {
-              throw new Error("Failed to delete ticket");
+              throw new ticketId("Book");
           }
 
           alert(`Ticket ${ticketId} deleted`);
@@ -88,6 +89,8 @@ async function fetchTickets(filter = "") {
       alert("Failed to load tickets");
   }
 }
+
+// ticketDiv.querySelector(".delete-btn").addEventListener("click", () => deleteTicket(ticketDiv, ticket.id));
 
 
 function renderTickets(ticketArray) {
